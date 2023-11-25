@@ -27,7 +27,7 @@ const Edit = ({ save, set }) => {
         const contentStateString = JSON.stringify(convertToRaw(contentState));
         localStorage.setItem("editorContent", contentStateString);
         set(false);
-        toast.success("Changes have been saved.");
+        toast.success("Your changes have been saved.");
       } catch (error) {
         console.log(error);
         toast.error("Something went wrong.");

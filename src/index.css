@@ -23,6 +23,7 @@ nav {
   justify-content: center;
   position: relative;
   align-items: center;
+  min-height: 5vh;
 }
 
 h4 {
@@ -59,6 +60,30 @@ h4 {
   right: 3rem;
   bottom: 3rem;
   cursor: pointer;
+  z-index: 1;
+}
+
+.helpBox {
+  position: absolute;
+  background-color: #bcdaee;
+  color: black;
+  top: -20rem;
+  left: -10rem;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: small;
+}
+
+.helpBox li {
+  margin-bottom: 10px;
+}
+
+.helpBox h5 {
+  margin: 0;
+}
+
+.helpBox p {
+  margin: 0;
 }
 
 .red {
@@ -76,4 +101,34 @@ pre {
 pre span {
   color: #e4e4e4;
   text-decoration: none !important;
+}
+
+@media only screen and (max-width: 767px) {
+  section {
+    margin: 8vh 10px 0px 10px;
+  }
+
+  .btn {
+    color: #007ac3;
+    background-color: transparent;
+    border: 2px solid #007ac3;
+    padding: 10px 40px 10px 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    bottom: 1.5rem;
+    cursor: pointer;
+  }
+
+  nav h4 {
+    display: none;
+  }
+
+  .help {
+    position: fixed;
+    right: 1rem;
+    bottom: 3rem;
+    cursor: pointer;
+  }
 }
