@@ -1,0 +1,16 @@
+.red {
+  color: red;
+}
+
+pre {
+  background-color: #202123;
+  overflow: auto;
+  font-family: "Monaco", monospace;
+  padding: 0 1em;
+  border-radius: 5px;
+}
+
+pre span {
+  color: #e4e4e4;
+  text-decoration: none;
+}
