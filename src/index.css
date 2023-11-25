@@ -1,3 +1,66 @@
+html {
+  min-height: 100vh;
+  background-color: #e5f3fa;
+  font-family: Inter;
+}
+
+section {
+  margin: 50px 100px 50px 100px;
+}
+
+.logoHolder {
+  position: absolute;
+  background-color: #b0d3eac5;
+  /* padding: 2rem; */
+  top: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
+h4 {
+  color: #3596d0;
+}
+
+.btn {
+  color: #007ac3;
+  background-color: transparent;
+  border: 2px solid #007ac3;
+  padding: 10px 40px 10px 40px;
+  border-radius: 20px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #007ac3;
+  color: white;
+}
+
+.editor {
+  padding: 1rem;
+  min-height: 70vh;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.help {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  cursor: pointer;
+}
+
 .red {
   color: red;
 }
@@ -12,5 +75,5 @@ pre {
 
 pre span {
   color: #e4e4e4;
-  text-decoration: none;
+  text-decoration: none !important;
 }

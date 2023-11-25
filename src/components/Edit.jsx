@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import {
   Editor,
   EditorState,
@@ -8,6 +9,8 @@ import {
   Modifier,
 } from "draft-js";
 import "draft-js/dist/Draft.css";
+import placeholders from "../constants/placeholders";
+import styleMap from "../utils/styleMap";
 
 const Edit = ({ save, set }) => {
   const [editorState, setEditorState] = useState(() => {
@@ -19,10 +22,16 @@ const Edit = ({ save, set }) => {
 
   useEffect(() => {
     if (save) {
-      const contentState = editorState.getCurrentContent();
-      const contentStateString = JSON.stringify(convertToRaw(contentState));
-      localStorage.setItem("editorContent", contentStateString);
-      set(false);
+      try {
+        const contentState = editorState.getCurrentContent();
+        const contentStateString = JSON.stringify(convertToRaw(contentState));
+        localStorage.setItem("editorContent", contentStateString);
+        set(false);
+        toast.success("Changes have been saved.");
+      } catch (error) {
+        console.log(error);
+        toast.error("Something went wrong.");
+      }
     }
   }, [save]);
 
@@ -35,23 +44,6 @@ const Edit = ({ save, set }) => {
     }
 
     return "not-handled";
-  };
-
-  const styleMap = {
-    red: {
-      color: "red",
-      fontWeight: "normal",
-    },
-    bold: {
-      fontWeight: "bold",
-      fontSize: "16px",
-    },
-    underline: {
-      fontSize: "16px",
-      fontWeight: "normal",
-      textDecoration: "underline",
-      color: "black",
-    },
   };
 
   const handleBeforeInput = (input) => {
@@ -112,14 +104,18 @@ const Edit = ({ save, set }) => {
     return "not-handled";
   };
 
+  let placeholder =
+    placeholders[Math.floor(Math.random() * placeholders.length)];
+
   return (
-    <div style={{ border: "1px solid red" }}>
+    <div className="editor">
       <Editor
         editorState={editorState}
         handleKeyCommand={handleKeyCommand}
         handleBeforeInput={handleBeforeInput}
         onChange={setEditorState}
         customStyleMap={styleMap}
+        placeholder={placeholder}
       />
     </div>
   );
