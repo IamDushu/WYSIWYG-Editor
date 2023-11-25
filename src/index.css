@@ -105,7 +105,7 @@ pre span {
 
 @media only screen and (max-width: 767px) {
   section {
-    margin: 8vh 10px 0px 10px;
+    margin: 12vh 10px 0px 10px;
   }
 
   .btn {
