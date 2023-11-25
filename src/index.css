@@ -52,7 +52,9 @@ h4 {
   min-height: 70vh;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .help {
@@ -105,7 +107,7 @@ pre span {
 
 @media only screen and (max-width: 767px) {
   section {
-    margin: 8vh 10px 0px 10px;
+    margin: 12vh 10px 0px 10px;
   }
 
   .btn {
